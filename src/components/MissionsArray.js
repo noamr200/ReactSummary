@@ -3,12 +3,12 @@ import MissionComponent from "./MissionComponent";
 function MissionsArray(props)
 {
     let MissionsArray=[];
-    let g=props.get1;
+    let AppMissions=props.appMissions;
     let carRows;
     let del=props.del;
     let filter=props.filter;
-  //  React.useEffect(()=>{
-    MissionsArray=g;
+
+    MissionsArray=AppMissions;
     let finalArray=[];
     
     for (let i=0;i<MissionsArray.length;++i)
@@ -35,17 +35,7 @@ function MissionsArray(props)
         }
     }
     carRows = finalArray.map((mission, index) => <MissionComponent   key={index} mission={mission} del={del}  />);
-    console.log (g);
-    console.log (carRows);
-  //  },missions);
-    
-   /* function addMission(text)
-    {
-        var m=new Mission(text,true,false);
-        MissionsArray.push(m);
-        //setMissions(this.MissionsArray);
-    }*/
-   // carRows = MissionsArray.map((mission, index) => <MissionComponent   key={index} mission={mission}  />);
+   
     return (<div><p>Missions:</p> {carRows} </div>);
 }
 export default MissionsArray;

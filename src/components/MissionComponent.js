@@ -3,7 +3,6 @@ import { FaBeer } from 'react-icons/fa';
 import '../components/MissionComponent.css';
 function MissionComponent(props)
 {
-    const [checked,setChecked]=React.useState(false);
     const [deleted,setDeleted]=React.useState("content");
     let m=props.mission;
     let del=props.del;
@@ -14,15 +13,11 @@ function MissionComponent(props)
         {
             setDeleted("content");
         }
-      },);
-   // let deleted=props.mission.isCompleted;
-    console.log (m);
+      },[m.isCompleted]);
     function ToggleActive()
     {
       setDeleted(m.isCompleted);
-      // setChecked(!checked);
        m.isCompleted=!m.isCompleted;
-       setChecked(m.isCompleted);
        if (m.isCompleted===true)
        setDeleted(" content deleted");
        else 

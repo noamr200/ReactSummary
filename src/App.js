@@ -26,9 +26,14 @@ function App() {
   }
   function submit()
   {
+    if (tempTxt.length===0) 
+    {
+      alert("Cannot submit empty tasks!");
+      return;
+    }
     let m=new Mission(tempTxt,false,false);
-    console.log (m);
     setMission(missions.concat(m));
+    setTempTxt("");
   }
   function setAll()
   {
@@ -47,9 +52,9 @@ function App() {
     <div className="App">
       <div className="App-header">
      <h1>Todos</h1>
-     <textarea placeholder="What's Next?" onChange={updateTempMission} ></textarea>
-     <button onClick={submit}>Sumbit</button>
-     <MissionsArray get1={missions} del={removedDeleted} filter={filter}/>
+     <textarea placeholder="What's Next?" onChange={updateTempMission}  value={tempTxt} ></textarea>
+     <button onClick={submit} >Sumbit</button>
+     <MissionsArray appMissions={missions} del={removedDeleted}  filter={filter}/>
      <div className="btn-group">
   <button onClick={setAll}>ALL</button>
   <button onClick={setActive}>Active</button>
