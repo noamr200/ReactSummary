@@ -1,0 +1,13 @@
+.content:hover>.delete
+{
+    display:inline;
+    cursor: pointer;
+}
+.delete
+{
+    display:none;
+}
+.deleted
+{
+    text-decoration: line-through;
+}

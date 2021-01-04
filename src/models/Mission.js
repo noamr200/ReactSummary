@@ -1,10 +1,10 @@
 class Mission
 {
-    constructor(_content,_isActive,_Iscompleted)
+    constructor(_content,_Iscompleted,_IsMarkedForDeletion)
     {
         this.content=_content;
-        this.isActive=_isActive;
         this.isCompleted=_Iscompleted;
+        this.IsMarkedForDeletion=_IsMarkedForDeletion;
     }
 }
 export default Mission;
